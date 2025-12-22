@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Web</title>
+<link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+ <form action="cgi-bin/calculadora.py" method="post">
+        <h2>Calculadora</h2>
+        <label for="expr">Ingrese la expresion:</label>
+        <input type="text" id="expr" name="expr" placeholder="ejemplo:1+1" required>
+        <button type="submit">Calcular</button>
+    </form>
+</body>
+</html>
