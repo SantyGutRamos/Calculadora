@@ -1,5 +1,4 @@
 
-
 import cgi
 import re
 import math
@@ -10,16 +9,16 @@ expr = form.getvalue("expr", "")
 expr_clean = re.sub(r'\s+', '', expr)
 
 if expr_clean and not re.fullmatch(r'[\d.+\-*/()^raiz]+', expr_clean):
-    resultado = "Expresión inválida. Solo use números, +, -, *, /, **, (), raiz."
+    resultado = "Expresion invalida. Solo use números, +, -, *, /, **, (), raiz."
 else:
     try:
         expr_eval = re.sub(r'raiz', 'math.sqrt', expr_clean)
         expr_eval = re.sub(r'\^', '**', expr_eval)
         resultado = eval(expr_eval, {"__builtins__": None}, {"math": math})
     except ZeroDivisionError:
-        resultado = "Error: División por cero."
+        resultado = "Error: Division por cero."
     except Exception as e:
-        resultado = f"Error en la expresión: {str(e)}"
+        resultado = f"Error en la expresion: {str(e)}"
 
 print("Content-Type: text/html; charset=utf-8\n")
 

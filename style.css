@@ -15,7 +15,7 @@ form {
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #1f1d1d;
 }
 
 label {
@@ -34,13 +34,13 @@ input {
 }
 
 input:focus {
-    border-color: #3498db;
+    border-color: #3787bd;
     outline: none;
 }
 
 button {
     width: 100%;
-    background-color: #3498db;
+    background-color: #115685;
     color: white;
     border: none;
     padding: 10px;
@@ -57,7 +57,7 @@ button:hover {
     margin-top: 20px;
     padding: 10px;
     background-color: #e8f4fd;
-    border: 1px solid #3498db;
+    border: 1px solid #36aaf8;
     border-radius: 4px;
     text-align: center;
 }
