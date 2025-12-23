@@ -16,7 +16,8 @@ else:
         expr_eval = re.sub(r'raiz', 'math.sqrt', expr_clean)
         expr_eval = re.sub(r'\^', '**', expr_eval)
         resultado = eval(expr_eval, {"__builtins__": None}, {"math": math})
-   
+    except ZeroDivisionError:
+        resultado = "Error: División por cero."
     except Exception as e:
         resultado = f"Error en la expresión: {str(e)}"
 
@@ -31,7 +32,7 @@ print('''<!DOCTYPE html>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <form action="cgi-bin/calculadora.py" method="post">
+   <form action="../cgi-bin/calculadora.py" method="post">
         <h2>Calculadora</h2>
         <label for="expr">Ingrese la expresion:</label>
         <input type="text" id="expr" name="expr" placeholder="Ej: 12+(34*7/(6-8))-1" value="{}" required>
